@@ -17,8 +17,10 @@ app.use(bodyParser.json());
 app.use(cors());
 
 
+
 routes(router);
 
 app.use("/api", router);
+app.use("/", express.static("./frontend/build"));
 
 app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`));
