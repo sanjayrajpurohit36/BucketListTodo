@@ -1,7 +1,7 @@
 const UsersController = require("../controllers/UsersController.js");
 const TodoController = require("../controllers/TodoController.js");
 const BucketController = require("../controllers/BucketController");
-const TokenFile = require("./VerifyToken");
+const TokenFile = require("./verifyToken");
 const path = require("path");
 
 module.exports = function(app,db) {
