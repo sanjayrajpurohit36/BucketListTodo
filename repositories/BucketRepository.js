@@ -2,7 +2,6 @@ const Bucket = require("../models/BucketModel");
 
 module.exports = {
   all: userId => {
-    console.log("userId", userId)
     return Bucket.find({ user: userId}).populate("user", "name");
   },
 

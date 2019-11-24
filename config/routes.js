@@ -15,7 +15,7 @@ module.exports = function(app,db) {
   app.post("/todo", TokenFile.verifyToken, TodoController.create)
   app.get("/todo/:bucketId/", TokenFile.verifyToken, TodoController.getTodoList)
   app.put("/todo", TokenFile.verifyToken, TodoController.updateTodoList)
-  app.delete("/todo", TokenFile.verifyToken, TodoController.deleteTodoList)
+  app.post("/todo/delete", TokenFile.verifyToken, TodoController.deleteTodoList)
 
   // Bucket
   app.get("/bucket", TokenFile.verifyToken, BucketController.getBucketList)

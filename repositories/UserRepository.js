@@ -1,5 +1,4 @@
 const bcrypt = require("bcrypt-nodejs");
-const tokenFile = require("../config/verifyToken");
 const User = require("../models/UserModel");
 
 module.exports = {
