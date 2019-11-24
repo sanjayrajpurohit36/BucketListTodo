@@ -1,25 +1,25 @@
 const jwt = require("jsonwebtoken");
 const User = require("../repositories/UserRepository");
 
-module.exports = { 
-    
+module.exports = {
   verifyToken: (req, res, next) => {
     // console.log("req coming in verify token middleware", req);
     var token = req.headers["x-access-token"];
     if (!token)
-        return res
+      return res
         .status(403)
-        .send({ success: false, 
-            message: "User dosen't exist. Plz register & then login."
+        .send({
+          success: false,
+          message: "User dosen't exist. Plz register & then login."
         });
+    console.log(User);
     User.find_by_token(token)
-        .then(userData => {
-        req["user"] = { id: userData._id, email: userData.email }
+      .then(userData => {
+        req["user"] = { id: userData._id, email: userData.email };
         next();
-        })
-        .catch(err => {
+      })
+      .catch(err => {
         res.status(422).send({ auth: false, message: "Need to login." });
-        });
-    }
-}
-
+      });
+  }
+};
