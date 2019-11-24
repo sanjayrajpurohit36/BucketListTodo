@@ -12,7 +12,7 @@
   "author": "Sanjay Rajpurohit",
   "license": "ISC",
   "engines": {
-    "node": "^10.15.0",
+    "node": "10.15.0"
   },
   "dependencies": {
     "bcrypt": "^3.0.6",
