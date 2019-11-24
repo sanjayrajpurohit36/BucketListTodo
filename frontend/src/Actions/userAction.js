@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export function createUserAction(data) {
     return function(dispatch) {
-        axios.post("http://localhost:3001/api/signup", data)
+        axios.post("/api/signup", data)
         .then((response) => {
             dispatch(
                 {
@@ -17,7 +17,7 @@ export function createUserAction(data) {
 
 export function loginUserAction(data) {
     return function (dispatch) {
-        axios.post("http://localhost:3001/api/login", data)
+        axios.post("/api/login", data)
         .then((response) => {
             dispatch({
                 type: "USER_DATA",
@@ -29,7 +29,7 @@ export function loginUserAction(data) {
 
 export function logoutUserAction(email, token) {
     return function(dispatch) {
-        axios.post("http://localhost:3001/api/logout", email, {
+        axios.post("/api/logout", email, {
             headers: {
                 'x-access-token': token
             }

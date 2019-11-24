@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export function getAllTaskAction(id,token) {
     return function(dispatch) {
-        axios.get("http://localhost:3001/api/todo/"+id, {
+        axios.get("/api/todo/"+id, {
             headers: {
                     'x-access-token': token
             }
@@ -20,7 +20,7 @@ export function getAllTaskAction(id,token) {
 
 export function createTaskAction(data, token) {
     return function(dispatch) {
-        axios.post("http://localhost:3001/api/todo", data, {
+        axios.post("/api/todo", data, {
             headers: {
                     'x-access-token': token
             }
@@ -38,7 +38,7 @@ export function createTaskAction(data, token) {
 
 export function editTaskAction(data, token) {
     return function(dispatch) {
-        axios.put("http://localhost:3001/api/todo", data, {
+        axios.put("/api/todo", data, {
             headers: {
                     'x-access-token': token
             }
@@ -56,7 +56,7 @@ export function editTaskAction(data, token) {
 
 export function deleteTaskAction(data, token) {
     return function(dispatch) {
-        axios.post("http://localhost:3001/api/todo/delete", data, {
+        axios.post("/api/todo/delete", data, {
             headers: {
                     'x-access-token': token
             }

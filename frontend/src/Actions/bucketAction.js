@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export function getAllBucketAction(data) {
     return function(dispatch) {
-        axios.get("http://localhost:3001/api/bucket", {
+        axios.get("/api/bucket", {
             headers: {
                     'x-access-token': data
             }
@@ -20,7 +20,7 @@ export function getAllBucketAction(data) {
 
 export function createBucketAction(bucketName, token) {
     return function(dispatch) {
-        axios.post("http://localhost:3001/api/bucket", bucketName, {
+        axios.post("/api/bucket", bucketName, {
             headers: {
                     'x-access-token': token
             }
@@ -38,7 +38,7 @@ export function createBucketAction(bucketName, token) {
 
 export function editBucketAction(data, token) {
     return function(dispatch) {
-        axios.put("http://localhost:3001/api/bucket", data, {
+        axios.put("/api/bucket", data, {
             headers: {
                     'x-access-token': token
             }
