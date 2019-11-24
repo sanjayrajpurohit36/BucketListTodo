@@ -12,7 +12,7 @@ module.exports = {
         .send({ success: false, 
             message: "User dosen't exist. Plz register & then login."
         });
-    User.find_by_token(token, req.app.db)
+    User.find_by_token(token)
         .then(userData => {
         req["user"] = { id: userData._id, email: userData.email }
         next();
